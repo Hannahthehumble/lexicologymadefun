@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 3 · Morphological Structure of English Words — 互动练习与学习报告</title>
+<meta name="description" content="英语词汇学第3章：Morphemes, Morphs & Allomorphs, Classifying Morphemes, Morphemization。讲解后即时练习，手机可做，完成后一键生成学习报告PDF发给老师。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230ea86b'/%3E%3Cpath d='M32 50 V34 M32 34 L20 20 M32 34 L44 20 M20 20 h-7 M44 20 h7' stroke='white' stroke-width='4.5' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='13' cy='20' r='4.5' fill='white'/%3E%3Ccircle cx='51' cy='20' r='4.5' fill='white'/%3E%3Ccircle cx='32' cy='50' r='4.5' fill='%23ffc53d'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@500;600;700;900&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* ============================================================
+   Design tokens —— 语言学练习册：松绿(学术) + 砖红(批改) + 纸白
+   ============================================================ */
+:root{
+  --ink:#15241f;
+  --ink-soft:#3b5148;
+  --pine:#0ea86b;
+  --pine-deep:#0a7349;
+  --pine-tint:#d6f6e7;
+  --pine-line:#8fe0bd;
+  --brick:#f4503e;
+  --brick-tint:#ffe9e4;
+  --brick-line:#f8b19f;
+  --ochre:#f7a817;
+  --ochre-tint:#fdf1cc;
+  --teal:#0bb6c7;
+  --teal-tint:#dcf6f9;
+  --teal-deep:#0a7d89;
+  --paper:#e8f7ef;
+  --card:#ffffff;
+  --line:#d3e4db;
+  --muted:#60756d;
+  --serif:'Noto Serif SC', Georgia, 'Times New Roman', serif;
+  --sans:'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(22,40,34,.05), 0 6px 22px -12px rgba(22,40,34,.18);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--sans);
+  color:var(--ink);
+  background:linear-gradient(180deg,#e0f5e9 0%,#e8f7ef 40%,#e5f5ec 100%);
+  background-attachment:fixed;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:840px;margin:0 auto;padding:0 18px;}
+b,strong{font-weight:700;}
+i,em{font-style:italic;}
+.term{font-family:var(--serif);font-style:italic;}
+
+/* ---------- Sticky header / progress ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{display:flex;align-items:center;gap:14px;max-width:840px;margin:0 auto;padding:9px 18px;}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;}
+.brand-mark{flex:0 0 auto;width:30px;height:30px;}
+.brand-text{font-family:var(--serif);font-weight:700;font-size:14px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.brand-text small{display:block;font-family:var(--sans);font-weight:400;font-size:11px;color:var(--muted);}
+.progress-block{margin-left:auto;flex:0 0 auto;display:flex;align-items:center;gap:10px;min-width:150px;}
+.progress-track{flex:1;height:8px;background:#e3e9e5;border-radius:99px;overflow:hidden;}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#0bbf77,#2dd49b);border-radius:99px;transition:width .35s ease;}
+.progress-num{font-size:12px;font-weight:700;color:var(--pine-deep);white-space:nowrap;}
+
+/* ---------- Hero ---------- */
+.hero{padding:46px 0 30px;}
+.hero .kicker{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.04em;color:var(--pine);
+  background:var(--pine-tint);border:1px solid var(--pine-line);
+  padding:5px 12px;border-radius:99px;margin-bottom:18px;
+}
+.hero h1{
+  font-family:var(--serif);font-weight:900;
+  font-size:clamp(27px,5.4vw,42px);line-height:1.22;margin:0 0 14px;
+  color:var(--ink);letter-spacing:-.01em;
+}
+.hero h1 .en{display:block;font-size:clamp(18px,3.4vw,26px);font-weight:600;color:var(--pine-deep);margin-top:6px;}
+.hero p.lead{font-size:16px;color:var(--ink-soft);max-width:640px;margin:0 0 24px;}
+.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:22px 0 6px;}
+.howto .step{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 15px;box-shadow:var(--shadow);
+}
+.howto .step .n{
+  width:26px;height:26px;border-radius:8px;
+  background:linear-gradient(135deg,#0bbf77,#0a8f5c);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-bottom:9px;
+}
+.howto .step h4{margin:0 0 4px;font-size:14.5px;font-family:var(--serif);}
+.howto .step p{margin:0;font-size:12.8px;color:var(--muted);line-height:1.55;}
+
+/* ---------- Student info card ---------- */
+.infocard{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:20px 20px 8px;margin:26px 0 8px;
+}
+.infocard h3{margin:0 0 4px;font-family:var(--serif);font-size:17px;display:flex;align-items:center;gap:9px;}
+.infocard .sub{margin:0 0 14px;font-size:13px;color:var(--muted);}
+.grid-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.field.full{grid-column:1 / -1;}
+.field label{font-size:12.8px;font-weight:700;color:var(--ink-soft);}
+.field input{
+  font-family:var(--sans);font-size:15px;color:var(--ink);
+  border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:#fbfcfb;
+  transition:border-color .15s, box-shadow .15s;
+}
+.field input:focus{outline:none;border-color:var(--pine);box-shadow:0 0 0 3px var(--pine-tint);background:#fff;}
+
+/* ---------- Section nav chips ---------- */
+.secnav{display:flex;gap:8px;overflow-x:auto;padding:18px 2px 6px;scrollbar-width:none;}
+.secnav::-webkit-scrollbar{display:none;}
+.secnav a{
+  flex:0 0 auto;font-size:12.8px;font-weight:500;text-decoration:none;color:var(--ink-soft);
+  background:var(--card);border:1px solid var(--line);border-radius:99px;padding:7px 13px;
+  transition:all .15s;
+}
+.secnav a:hover{border-color:var(--pine);color:var(--pine-deep);}
+.secnav a.done{background:var(--pine-tint);border-color:var(--pine-line);color:var(--pine-deep);font-weight:700;}
+
+/* ---------- Learning section ---------- */
+section.lesson-sec{margin:34px 0;scroll-margin-top:76px;}
+.sec-head{display:flex;align-items:flex-start;gap:15px;margin-bottom:16px;}
+.sec-code{
+  flex:0 0 auto;font-family:var(--serif);font-weight:700;font-size:15px;color:#fff;
+  background:linear-gradient(135deg,#0bbf77,#0a7a51);
+  border-radius:11px;padding:7px 11px;line-height:1.2;margin-top:3px;
+}
+.sec-head h2{font-family:var(--serif);font-weight:700;font-size:clamp(20px,3.8vw,25px);margin:0;line-height:1.3;}
+.sec-head h2 .zh{font-size:.78em;color:var(--ink-soft);font-weight:600;}
+
+.lesson{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:20px 22px;margin-bottom:16px;
+}
+.lesson .l-tag{
+  display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:700;
+  color:var(--pine-deep);background:var(--pine-tint);border-radius:7px;padding:3px 10px;margin-bottom:12px;
+}
+.lesson p{margin:0 0 12px;font-size:14.8px;color:var(--ink-soft);}
+.lesson p:last-child{margin-bottom:0;}
+.lesson ul{margin:6px 0 12px;padding-left:0;list-style:none;}
+.lesson ul li{position:relative;padding-left:22px;margin-bottom:8px;font-size:14.6px;color:var(--ink-soft);}
+.lesson ul li::before{content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;border-radius:2px;background:var(--ochre);}
+.lesson .wordbox{
+  font-family:var(--serif);background:#f3fbf7;border:1px dashed var(--pine-line);
+  border-radius:10px;padding:12px 15px;margin:10px 0 14px;font-size:15px;color:var(--pine-deep);line-height:1.9;
+}
+.lesson .wordbox .seg{color:var(--brick);font-weight:600;}
+.lesson table.ref{width:100%;border-collapse:collapse;margin:8px 0 6px;font-size:13.8px;}
+.lesson table.ref th,.lesson table.ref td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top;}
+.lesson table.ref th{background:#effaf4;font-family:var(--serif);font-weight:600;}
+.note-line{display:flex;gap:10px;background:#fef8e2;border:1px solid #f1d58d;border-radius:10px;padding:11px 14px;font-size:13.3px;color:#8a5a09;margin-top:6px;}
+.note-line svg{flex:0 0 auto;margin-top:2px;}
+
+/* ---------- Quiz ---------- */
+.quiz-tag{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--brick);margin:4px 0 10px;}
+.q{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 19px;margin-bottom:13px;box-shadow:var(--shadow);scroll-margin-top:80px;
+}
+.q.answered-correct{border-color:var(--pine-line);}
+.q.answered-wrong{border-color:var(--brick-line);}
+.q-head{display:flex;gap:11px;align-items:flex-start;}
+.q-num{
+  flex:0 0 auto;width:25px;height:25px;border-radius:50%;background:#eef2f0;color:var(--ink-soft);
+  font-size:12.5px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.q.answered-correct .q-num{background:var(--pine);color:#fff;}
+.q.answered-wrong .q-num{background:var(--brick);color:#fff;}
+.q-stem{font-size:15px;line-height:1.65;flex:1;}
+.q-stem .qtype{display:inline-block;font-size:11px;font-weight:700;color:var(--teal-deep);background:var(--teal-tint);border-radius:6px;padding:1px 7px;margin-right:7px;vertical-align:2px;letter-spacing:.03em;}
+.q-body{margin-top:13px;}
+
+/* option buttons (mcq / tf) */
+.opts{display:flex;flex-direction:column;gap:9px;}
+.opt{
+  display:flex;align-items:center;gap:11px;width:100%;text-align:left;
+  font-family:var(--sans);font-size:14.5px;color:var(--ink);
+  background:#fbfcfb;border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;
+  transition:border-color .13s,background .13s,transform .05s;
+}
+.opt:hover{border-color:var(--pine-line);background:#f4f8f6;}
+.opt:active{transform:scale(.995);}
+.opt .key{flex:0 0 auto;width:23px;height:23px;border-radius:7px;background:#e9efec;color:var(--pine-deep);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+.opt .mk{margin-left:auto;flex:0 0 auto;display:none;}
+.opt.selected{border-color:var(--pine);background:var(--pine-tint);}
+.opt.selected .key{background:var(--pine);color:#fff;}
+.opt.correct{border-color:var(--pine);background:var(--pine-tint);}
+.opt.correct .key{background:var(--pine);color:#fff;}
+.opt.correct .mk{display:block;}
+.opt.wrong{border-color:var(--brick);background:var(--brick-tint);}
+.opt.wrong .key{background:var(--brick);color:#fff;}
+.opt.wrong .mk{display:block;}
+.opt.locked{cursor:default;}
+.opt.disabled{pointer-events:none;opacity:.62;}
+
+/* fill in */
+.fill-row{display:flex;gap:9px;flex-wrap:wrap;}
+.fill-row input{
+  flex:1;min-width:180px;font-family:var(--serif);font-size:15.5px;
+  border:1px solid var(--line);border-radius:10px;padding:11px 14px;background:#fbfcfb;
+}
+.fill-row input:focus{outline:none;border-color:var(--pine);box-shadow:0 0 0 3px var(--pine-tint);background:#fff;}
+.btn{
+  font-family:var(--sans);font-weight:700;font-size:14px;border-radius:10px;cursor:pointer;
+  padding:11px 18px;border:1px solid transparent;transition:all .15s;display:inline-flex;align-items:center;gap:8px;
+}
+.btn-pine{background:linear-gradient(135deg,#0bbf77,#0a935f);color:#fff;box-shadow:0 5px 15px -7px rgba(11,159,111,.6);}
+.btn-pine:hover{background:linear-gradient(135deg,#0cc47a,#087a51);}
+.btn-ghost{background:#fff;color:var(--pine-deep);border-color:var(--pine-line);}
+.btn-ghost:hover{background:var(--pine-tint);}
+.btn:disabled{opacity:.5;cursor:not-allowed;}
+
+/* match (select per left item) */
+.match-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;flex-wrap:wrap;}
+.match-left{flex:0 0 auto;font-family:var(--serif);font-style:italic;font-weight:600;font-size:14.5px;background:#effaf4;border:1px solid var(--line);border-radius:9px;padding:8px 13px;min-width:96px;text-align:center;}
+.match-arrow{color:var(--muted);flex:0 0 auto;}
+.match-row select{
+  flex:1;min-width:150px;font-family:var(--sans);font-size:14px;color:var(--ink);
+  border:1px solid var(--line);border-radius:9px;padding:9px 11px;background:#fbfcfb;cursor:pointer;
+}
+.match-row select:focus{outline:none;border-color:var(--pine);box-shadow:0 0 0 3px var(--pine-tint);}
+.match-row.ok select{border-color:var(--pine);background:var(--pine-tint);}
+.match-row.no select{border-color:var(--brick);background:var(--brick-tint);}
+
+/* classify */
+.cls-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);flex-wrap:wrap;}
+.cls-row:last-child{border-bottom:none;}
+.cls-word{flex:1;min-width:120px;font-family:var(--serif);font-weight:600;font-size:14.8px;}
+.cls-btns{flex:0 0 auto;display:flex;gap:7px;}
+.cls-btn{font-family:var(--sans);font-size:13px;font-weight:500;border:1px solid var(--line);background:#fbfcfb;border-radius:99px;padding:6px 14px;cursor:pointer;color:var(--ink-soft);transition:all .12s;}
+.cls-btn:hover{border-color:var(--pine-line);}
+.cls-btn.sel-correct{background:var(--pine);border-color:var(--pine);color:#fff;}
+.cls-btn.sel-wrong{background:var(--brick);border-color:var(--brick);color:#fff;}
+.cls-btn.locked{cursor:default;}
+
+/* feedback */
+.feedback{display:none;margin-top:13px;border-radius:11px;padding:12px 15px;font-size:13.6px;line-height:1.6;}
+.feedback.show{display:block;animation:fadeIn .25s ease;}
+.feedback.good{background:var(--pine-tint);border:1px solid var(--pine-line);color:var(--pine-deep);}
+.feedback.bad{background:var(--brick-tint);border:1px solid var(--brick-line);color:#8f3520;}
+.feedback .fb-title{font-weight:700;display:flex;align-items:center;gap:8px;margin-bottom:3px;}
+.feedback .fb-ex{color:var(--ink-soft);}
+.feedback.bad .fb-ex{color:#7d3a28;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-3px);}to{opacity:1;transform:none;}}
+
+/* ---------- Final / report trigger ---------- */
+.final-card{
+  background:linear-gradient(150deg,#0a7a51 0%,#0ea86b 52%,#0bb890 100%);color:#eafaf2;
+  border-radius:18px;padding:30px 26px;margin:40px 0 20px;box-shadow:var(--shadow);
+}
+.final-card h2{font-family:var(--serif);margin:0 0 6px;font-size:24px;}
+.final-card p{margin:0 0 18px;font-size:14.5px;color:#cdeede;}
+.score-hero{display:flex;align-items:baseline;gap:12px;margin:6px 0 20px;flex-wrap:wrap;}
+.score-hero .big{font-family:var(--serif);font-size:52px;font-weight:900;line-height:1;}
+.score-hero .lvl{font-size:15px;font-weight:700;background:rgba(255,255,255,.14);border-radius:99px;padding:5px 14px;}
+.mastery-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:20px;}
+.mastery-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:11px;padding:10px 13px;font-size:12.8px;}
+.mastery-item .mi-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:6px;}
+.mastery-item .bar{height:6px;background:rgba(255,255,255,.15);border-radius:99px;overflow:hidden;}
+.mastery-item .bar i{display:block;height:100%;background:#ffc53d;border-radius:99px;}
+.declare{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:15px 17px;margin-bottom:20px;}
+.declare label{display:flex;gap:10px;align-items:flex-start;font-size:13.4px;color:#dbe9e2;margin-bottom:10px;cursor:pointer;}
+.declare label:last-child{margin-bottom:0;}
+.declare input{margin-top:3px;width:17px;height:17px;accent-color:#ffc53d;flex:0 0 auto;}
+.final-actions{display:flex;gap:11px;flex-wrap:wrap;}
+.final-actions .btn-pine{background:#ffc53d;color:#233b2c;box-shadow:0 5px 15px -7px rgba(255,197,61,.7);}
+.final-actions .btn-pine:hover{background:#ffd568;}
+.final-actions .btn-ghost{background:transparent;color:#eafaf2;border-color:rgba(255,255,255,.35);}
+.final-actions .btn-ghost:hover{background:rgba(255,255,255,.1);}
+.warn-text{font-size:12.8px;color:#ffd568;margin-top:12px;display:none;}
+.warn-text.show{display:block;}
+
+footer.site{padding:30px 0 50px;text-align:center;color:var(--muted);font-size:12.5px;}
+footer.site .serif{font-family:var(--serif);}
+
+/* toast */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:#fff;font-size:13.6px;padding:12px 20px;border-radius:11px;
+  opacity:0;pointer-events:none;transition:all .28s;z-index:100;max-width:90vw;box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+/* 报告预览 / 生成层：报告在正常文档流中渲染，保证 html2canvas 尺寸正确 */
+#pdfMask{position:fixed;inset:0;background:#e6f5ed;z-index:90;display:none;overflow:auto;}
+#pdfMask.show{display:block;}
+#maskHead{
+  position:sticky;top:0;z-index:2;display:flex;flex-direction:column;align-items:center;gap:9px;
+  padding:18px 18px 12px;text-align:center;color:#0a6b47;
+  background:linear-gradient(#e6f5ed 82%,rgba(230,245,237,0));
+}
+#maskHead .m-title{font-family:var(--serif);font-size:17px;font-weight:700;display:flex;align-items:center;gap:10px;}
+#maskHead .m-sub{font-size:12.5px;color:var(--muted);}
+.spinner{width:25px;height:25px;border:3.5px solid #cdd8d2;border-top-color:var(--pine);border-radius:50%;animation:spin .9s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+#maskActions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:4px 18px 36px;}
+#maskActions .btn{padding:11px 18px;}
+
+/* ============================================================
+   PDF report —— 屏幕外渲染（宽 A4 210mm），打印时复位
+   ============================================================ */
+#report{
+  width:794px;margin:2px auto 22px;
+  background:#fff;color:#111;font-family:'Noto Sans SC',Arial,sans-serif;
+  font-size:10.5pt;line-height:1.55;padding:38px 40px;
+  box-shadow:0 6px 26px rgba(20,40,32,.16);border-radius:3px;
+}
+#report *{box-sizing:border-box;}
+.rp-head{border-bottom:2.5pt solid #0a9362;padding-bottom:10px;margin-bottom:14px;}
+.rp-head .rp-course{font-size:9.5pt;letter-spacing:.08em;color:#0a9362;font-weight:700;text-transform:uppercase;}
+.rp-head h1{font-family:'Noto Serif SC',Georgia,serif;font-size:19pt;margin:5px 0 3px;color:#0a6b47;line-height:1.3;}
+.rp-head .rp-sub{font-size:10pt;color:#555;}
+.rp-info{width:100%;border-collapse:collapse;margin-bottom:14px;}
+.rp-info td{border:1pt solid #b9c6c0;padding:6px 9px;font-size:10pt;}
+.rp-info td.k{background:#e6f6ee;font-weight:700;width:16%;color:#0a6b47;}
+.rp-score-band{display:flex;gap:0;border:1pt solid #b9c6c0;border-radius:4px;overflow:hidden;margin-bottom:16px;}
+.rp-score-band .cell{flex:1;padding:10px 8px;text-align:center;border-right:1pt solid #d5ddd9;}
+.rp-score-band .cell:last-child{border-right:none;}
+.rp-score-band .cell .v{font-family:'Noto Serif SC',serif;font-size:17pt;font-weight:700;color:#0a9362;display:block;}
+.rp-score-band .cell .k{font-size:8.6pt;color:#666;}
+.rp-h2{font-family:'Noto Serif SC',Georgia,serif;font-size:12.5pt;color:#0a6b47;margin:16px 0 7px;padding-left:8px;border-left:4pt solid #0a9362;}
+.rp-table{width:100%;border-collapse:collapse;margin-bottom:8px;}
+.rp-table th,.rp-table td{border:1pt solid #c3ccc8;padding:5px 7px;font-size:9.3pt;text-align:left;vertical-align:top;}
+.rp-table th{background:#e6f6ee;color:#0a6b47;font-weight:700;}
+.rp-table td.c{text-align:center;}
+.rp-res-ok{color:#0a9d63;font-weight:700;}
+.rp-res-no{color:#b3452c;font-weight:700;}
+.rp-answers td{font-size:9pt;}
+.rp-answers .qn{text-align:center;font-weight:700;width:6%;}
+.rp-answers .qq{width:42%;}
+.rp-answers .ya{width:23%;}
+.rp-answers .ca{width:23%;}
+.rp-answers .rs{text-align:center;width:6%;}
+.rp-declare{background:#f1f9f5;border:1pt solid #cfe7db;border-radius:5px;padding:11px 13px;margin:14px 0;font-size:9.6pt;color:#334;}
+.rp-declare ul{margin:7px 0 0;padding-left:18px;}
+.rp-declare li{margin-bottom:3px;}
+.rp-sign{display:flex;gap:26px;margin-top:18px;font-size:10pt;}
+.rp-sign .line{flex:1;}
+.rp-sign .ln{border-bottom:1pt solid #555;height:26px;}
+.rp-sign .lab{font-size:9pt;color:#666;margin-top:3px;}
+.rp-teacher{margin-top:22px;border:1.5pt solid #b9c6c0;border-radius:6px;padding:12px 14px;min-height:78px;}
+.rp-teacher .t{font-weight:700;color:#0a6b47;font-size:10pt;margin-bottom:8px;}
+.rp-teacher .signrow{display:flex;gap:26px;margin-top:26px;}
+.pb-before{page-break-before:always;}
+.avoid-break{page-break-inside:avoid;}
+
+/* ============================================================
+   Bilingual explanation —— 知识点讲解英汉双语
+   ============================================================ */
+.ltag{
+  display:inline-block;font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:.06em;border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:1.5px;
+}
+.ltag.en{background:var(--teal-tint);color:var(--teal-deep);}
+.ltag.zh{background:var(--ochre-tint);color:#92660a;}
+.lesson p.zh{
+  border-left:3px solid #76d6ac;padding:8px 13px;
+  background:#f2faf5;border-radius:0 9px 9px 0;
+}
+.lesson ul li .li-en,.lesson ul li .li-zh{display:block;}
+.lesson ul li .li-zh{font-size:.92em;color:var(--muted);margin-top:1px;}
+.lesson .wordbox .ltag{margin-right:6px;}
+
+/* ============================================================
+   Table of contents —— 可点击跳转目录
+   ============================================================ */
+.toc-card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:20px 22px 16px;margin:24px 0 10px;scroll-margin-top:76px;
+}
+.toc-card h3{margin:0 0 4px;font-family:var(--serif);font-size:19px;display:flex;align-items:center;gap:10px;}
+.toc-card h3 svg{color:var(--pine);}
+.toc-card h3 .toc-en{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.04em;}
+.toc-sub{margin:0 0 10px;font-size:12.8px;color:var(--muted);}
+.toc-list{list-style:none;margin:0;padding:0;}
+.toc-list a{
+  display:flex;align-items:center;gap:12px;padding:10px 8px;
+  border-bottom:1px dashed var(--line);text-decoration:none;color:var(--ink);
+  border-radius:9px;transition:background .13s;
+}
+.toc-list a:hover{background:#cdf4e2;}
+.toc-list li:last-child a{border-bottom:none;}
+.toc-code{
+  flex:0 0 auto;font-family:var(--serif);font-weight:700;font-size:12.5px;color:#fff;
+  background:linear-gradient(135deg,#0bbf77,#0a7a51);border-radius:7px;padding:3px 8px;min-width:44px;text-align:center;
+}
+.toc-t{flex:1;min-width:0;display:flex;flex-direction:column;line-height:1.35;}
+.toc-t .t-en{font-family:var(--serif);font-weight:600;font-size:14.5px;}
+.toc-t .t-zh{font-size:12.3px;color:var(--muted);}
+.toc-n{flex:0 0 auto;font-size:12px;color:var(--muted);}
+.toc-arrow{flex:0 0 auto;color:var(--pine);font-size:18px;font-weight:700;}
+.toc-extra{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);}
+.toc-extra a{
+  font-size:12.8px;color:var(--pine-deep);text-decoration:none;
+  background:var(--pine-tint);border:1px solid var(--pine-line);border-radius:99px;padding:6px 13px;
+  transition:all .13s;
+}
+.toc-extra a:hover{background:linear-gradient(135deg,#0bbf77,#0a8f5c);color:#fff;border-color:transparent;}
+#finalCard,.infocard{scroll-margin-top:80px;}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width:680px){
+  .howto{grid-template-columns:1fr;}
+  .grid-fields{grid-template-columns:1fr;}
+  .mastery-list{grid-template-columns:1fr;}
+  .brand-text small{display:none;}
+  .progress-block{min-width:120px;}
+  .hero{padding:34px 0 22px;}
+  .lesson{padding:17px 17px;}
+  .q{padding:16px 15px;}
+  .final-card{padding:24px 20px;}
+  .match-left{min-width:80px;}
+  .toc-card{padding:17px 16px 13px;}
+  .toc-n{display:none;}
+  .field input,.fill-row input,.match-row select{font-size:16px;}
+}
+@media print{
+  body{background:#fff;}
+  .topbar,.hero,.secnav,section.lesson-sec,.final-card,footer.site,.toast,#maskHead,#maskActions{display:none !important;}
+  #pdfMask{display:block !important;position:static;background:#fff;overflow:visible;}
+  #report{display:block !important;width:auto;max-width:none;margin:0;padding:6mm;box-shadow:none;}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+  html{scroll-behavior:auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 顶部进度条 ===== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0ea86b"/>
+        <path d="M32 50 V34 M32 34 L20 20 M32 34 L44 20 M20 20 h-7 M44 20 h7" stroke="white" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+        <circle cx="13" cy="20" r="4.5" fill="white"/><circle cx="51" cy="20" r="4.5" fill="white"/>
+        <circle cx="32" cy="50" r="4.5" fill="#ffc53d"/>
+      </svg>
+      <div class="brand-text">English Lexicology · Ch.3<small>Morphological Structure 互动练习册</small></div>
+    </div>
+    <div class="progress-block">
+      <div class="progress-track"><div class="progress-fill" id="progFill"></div></div>
+      <div class="progress-num" id="progNum">0/45</div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="wrap">
+  <div class="hero">
+    <span class="kicker">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+      英语词汇学 · 第 3 章 互动学习
+    </span>
+    <h1>
+      英语词的形态结构
+      <span class="en">Morphological Structure of English Words</span>
+    </h1>
+    <p class="lead">
+      学完每个知识点，立刻用练习检验自己是否真正理解；全部完成后一键生成一份
+      <b>学习报告 PDF</b>，里面记录你的每道作答与得分，可以直接发给老师，证明你已经掌握了本章内容。手机、电脑浏览器都可以做。
+    </p>
+    <div class="howto">
+      <div class="step"><div class="n">1</div><h4>先读讲解</h4><p>每个小节先看简明讲解与教材原例，抓住定义与分类标准。</p></div>
+      <div class="step"><div class="n">2</div><h4>再做练习</h4><p>选择、判断、填空、匹配与分类，作答后即时反馈并附解析。</p></div>
+      <div class="step"><div class="n">3</div><h4>生成报告</h4><p>完成全部 45 题并勾选自评，一键导出 PDF 学习报告发给老师。</p></div>
+    </div>
+
+    <!-- ===== 可点击跳转目录 ===== -->
+    <div class="toc-card" id="toc">
+      <h3>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="2" cy="6" r="1.2" fill="currentColor"/><circle cx="2" cy="12" r="1.2" fill="currentColor"/><circle cx="2" cy="18" r="1.2" fill="currentColor"/></svg>
+        目录 <span class="toc-en">Contents</span>
+      </h3>
+      <p class="toc-sub">点击任一小节即可直接跳转到对应讲解与练习 / Click any item to jump to its explanation and exercises.</p>
+      <ul class="toc-list">
+        <li><a href="#sec-0"><span class="toc-code">3.1</span><span class="toc-t"><span class="t-en">Morphemes</span><span class="t-zh">词素</span></span><span class="toc-n">5 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-1"><span class="toc-code">3.2</span><span class="toc-t"><span class="t-en">Morphs and Allomorphs</span><span class="t-zh">形素与词素变体</span></span><span class="toc-n">6 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-2"><span class="toc-code">3.3.1</span><span class="toc-t"><span class="t-en">Free and Bound Morphemes</span><span class="t-zh">自由词素与粘着词素</span></span><span class="toc-n">5 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-3"><span class="toc-code">3.3.2</span><span class="toc-t"><span class="t-en">Derivational and Inflectional Morphemes</span><span class="t-zh">派生词素与屈折词素</span></span><span class="toc-n">5 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-4"><span class="toc-code">3.3.3</span><span class="toc-t"><span class="t-en">Content and Grammatical Morphemes</span><span class="t-zh">实义词素与语法词素</span></span><span class="toc-n">6 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-5"><span class="toc-code">3.4</span><span class="toc-t"><span class="t-en">Identifying Morphemes</span><span class="t-zh">识别词素</span></span><span class="toc-n">6 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-6"><span class="toc-code">3.5</span><span class="toc-t"><span class="t-en">Morphemization and New Morphemes</span><span class="t-zh">词素化与新词素</span></span><span class="toc-n">7 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+        <li><a href="#sec-7"><span class="toc-code">3.6</span><span class="toc-t"><span class="t-en">Root, Stem, Base &amp; Affix</span><span class="t-zh">词根、词干、词基与词缀</span></span><span class="toc-n">5 题</span><span class="toc-arrow">&rsaquo;</span></a></li>
+      </ul>
+      <div class="toc-extra">
+        <a href="#info-anchor">填写学生信息 Student Info</a>
+        <a href="#finalCard">生成学习报告 Learning Report</a>
+        <a href="#toc">回到目录 Back to Top</a>
+      </div>
+    </div>
+
+    <!-- 学生信息 -->
+    <div class="infocard" id="info-anchor">
+      <h3>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0ea86b" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        填写你的信息
+      </h3>
+      <p class="sub">这些信息会印在最终的学习报告 PDF 上，请如实填写。</p>
+      <div class="grid-fields">
+        <div class="field"><label for="sName">姓名 Name</label><input id="sName" type="text" placeholder="例如：张三 / Zhang San" autocomplete="name"></div>
+        <div class="field"><label for="sId">学号 Student ID</label><input id="sId" type="text" placeholder="例如：2023010101"></div>
+        <div class="field"><label for="sClass">班级 Class</label><input id="sClass" type="text" placeholder="例如：英语 23-1 班"></div>
+        <div class="field"><label for="sDate">日期 Date</label><input id="sDate" type="date"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 小节快速导航 -->
+  <nav class="secnav" id="secnav"></nav>
+
+  <!-- 各学习小节（由 JS 数据渲染） -->
+  <main id="sections"></main>
+
+  <!-- ===== 最终成绩与报告 ===== -->
+  <div class="final-card" id="finalCard">
+    <h2>完成练习，生成你的学习报告</h2>
+    <p>报告将包含你的信息、总分、各小节掌握情况，以及每道题的作答记录与正确答案。</p>
+    <div class="score-hero">
+      <span class="big" id="finalScore">—</span>
+      <span class="lvl" id="finalLvl">尚未完成</span>
+    </div>
+    <div class="mastery-list" id="masteryList"></div>
+    <div class="declare">
+      <label><input type="checkbox" class="decl" data-i="0"><span>我已学习并理解 <b>morpheme（词素）、morph（形素）、allomorph（词素变体）</b> 的定义与相互关系。</span></label>
+      <label><input type="checkbox" class="decl" data-i="1"><span>我掌握了 morpheme 的三种分类：<b>free/bound、derivational/inflectional、content/grammatical</b>。</span></label>
+      <label><input type="checkbox" class="decl" data-i="2"><span>我理解 <b>morphemization（词素化）</b> 与新词素（如前缀 e-/bro-/dis-，后缀 -gate/-ism/-net）的形成方式，并能识别 root / stem / base。</span></label>
+    </div>
+    <div class="final-actions">
+      <button class="btn btn-pine" id="genPdf">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        生成学习报告 PDF
+      </button>
+      <button class="btn btn-ghost" id="printPdf">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        打印 / 另存为 PDF
+      </button>
+    </div>
+    <div class="warn-text" id="warnText"></div>
+  </div>
+
+  <footer class="site">
+    <div class="serif">English Lexicology (4th Edition) · Chapter 3 Workbook</div>
+    <div>讲解内容依据《英语词汇学教程（第4版）》第 3 章整理 · 本页面为纯静态网页，可直接部署到 GitHub Pages</div>
+  </footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- 报告预览 / 生成层 -->
+<div id="pdfMask">
+  <div id="maskHead">
+    <div class="m-title"><span class="spinner" id="maskSpinner" style="display:none"></span><span id="maskTitle">学习报告预览</span></div>
+    <div class="m-sub" id="maskSub">请核对信息与作答记录，确认无误后下载 PDF 发给老师；手机上可左右滑动查看整页。</div>
+  </div>
+  <div id="report"></div>
+  <div id="maskActions">
+    <button class="btn btn-pine" id="dlPdf">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      下载 PDF 发给老师
+    </button>
+    <button class="btn btn-ghost" id="printPdf2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+      打印 / 另存为 PDF
+    </button>
+    <button class="btn btn-ghost" id="closeMask">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      关闭预览
+    </button>
+  </div>
+</div>
+
+<!-- html2canvas + jsPDF：渲染报告并分页导出 A4 PDF（jsDelivr） -->
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<script>
+/* ============================================================
+   章节与题目数据（依据《英语词汇学教程(第4版)》第3章整理）
+   题型：mcq 单选 / multi 多选 / tf 判断 / fill 填空 / match 匹配 / cls 分类
+   ============================================================ */
+const SECTIONS = [
+{
+  code:"3.1", zh:"词素", title:"Morphemes",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>Traditionally, the <b>word</b> has been regarded as the basic, smallest unit used to build sentences. Structurally, however, the word is not the smallest unit &mdash; many complex words can be further cut into smaller, meaningful parts.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>传统上，<b>词（word）</b>被看作造句的基本、最小单位。但从<b>结构</b>上看，词并不是最小单位&mdash;&mdash;很多复杂词可以继续切分成更小、有意义的单位。</p>",
+    "<div class='wordbox'>decontextualization<br>= <span class='seg'>de-</span> + <span class='seg'>con-</span> + <span class='seg'>text</span> + <span class='seg'>-al</span> + <span class='seg'>-iz(e)</span> + <span class='seg'>-ation</span><br>6 parts, each with its own meaning and none further divisible<br>共 6 个部分，每一部分都有自己的意义，且不能再继续切分。</div>",
+    "<p class='en'><span class='ltag en'>EN</span>The suffix <i>-ation</i> also appears as <i>-tion</i>, <i>-sion</i> and <i>-ion</i>: they share the same meaning and grammatical function and differ in form only because of the phonetic environment in which they occur. They are therefore <b>variants of the same suffix</b>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>其中 <i>-ation</i> 还有 <i>-tion</i>、<i>-sion</i>、<i>-ion</i> 等形式：它们意义和语法功能相同，只因为出现的语音环境不同而形式不同，因此是<b>同一个后缀的变体</b>。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Morpheme</b> is precisely such a <b>minimal meaningful unit</b> of a language.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Morpheme（词素 / 语素）</b>就是这种<b>最小的、有意义的单位（minimal meaningful unit）</b>。</p>",
+    "<ul><li><span class='li-en'>In word formation: &ldquo;the smallest functioning unit in the composition of words&rdquo; (Crystal 1985) / 构词角度：词的构成中最小的功能单位。</span></li><li><span class='li-en'>In syntax: &ldquo;the minimal form of grammatical analysis&rdquo; / 句法角度：语法分析的最小形式。</span></li><li><span class='li-en'>Etymology: Greek morph&eacute; means &lsquo;form&rsquo;; -eme, as in phoneme, means &lsquo;class of&rsquo; / 词源：morphe 是希腊语&lsquo;形式（form）&rsquo;，-eme 与 phoneme 中一样，表示&lsquo;…的类（class of）&rsquo;。</span></li></ul>",
+    "<p class='en'><span class='ltag en'>EN</span>Compare <i>studies</i>, <i>studying</i> and <i>studied</i>: each consists of <i>study</i> plus <i>-es</i>, <i>-ing</i> or <i>-ed</i>. These suffixes express <b>grammatical concepts</b> (number, tense, etc.) rather than deriving new words.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>比较 <i>studies</i>、<i>studying</i>、<i>studied</i>：都由 <i>study</i> 加 <i>-es / -ing / -ed</i> 构成；这些后缀表达的是<b>语法概念</b>（数、时态等），并不派生新词。</p>"
+  ],
+  questions:[
+    {t:"mcq", q:"A morpheme is best defined as ____.",
+     opts:["the smallest unit that makes up a sentence","the minimal meaningful unit of a language","a single letter of the alphabet","a word that carries several meanings"], a:1,
+     ex:"Morpheme 是语言中最小的、有意义的单位（minimal meaningful unit）；它可以小于词，如 decontextualization 就含 6 个 morphemes。"},
+    {t:"fill", q:"In word-formation, the morpheme is seen as &ldquo;the smallest ____ unit in the composition of words&rdquo; (Crystal 1985).",
+     a:["functioning"], ex:"填 functioning。构词角度，morpheme 是词的构成中最小的&lsquo;功能单位&rsquo;。"},
+    {t:"mcq", q:"How many morphemes are there in the word <i>decontextualization</i>?",
+     opts:["4","5","6","7"], a:2, ex:"de- + con- + text + -al + -iz(e) + -ation，共 6 个，每个都有意义且不能再分。"},
+    {t:"tf", q:"The forms <i>-tion</i>, <i>-sion</i> and <i>-ion</i> (as in action, decision, nation) are variants of the same suffix.",
+     a:true, ex:"它们的意义与语法功能相同，只是语音环境不同，是同一后缀的变体（allomorphs）。"},
+    {t:"mcq", q:"In <i>studies</i>, <i>studying</i> and <i>studied</i>, the forms <i>-es</i>, <i>-ing</i> and <i>-ed</i> express ____.",
+     opts:["new lexical meanings","grammatical concepts","new parts of speech","opposite meanings"], a:1,
+     ex:"它们表示数、时态等语法概念（grammatical concepts），并不派生新词。"}
+  ]
+},
+{
+  code:"3.2", zh:"形素与词素变体", title:"Morphs and Allomorphs",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>The morpheme is an <b>abstract unit</b>; in actual speech it must be realized by concrete forms.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Morpheme 是抽象单位（abstract unit）</b>，它在实际言语中要靠一个个具体的形式来实现（realize）。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Morph</b> is an actual spoken, minimal carrier of meaning &mdash; the phonetic or orthographic segment that realizes a morpheme.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Morph（形素）</b>：实际说出来的、最小的意义载体（actual spoken, minimal carriers of meaning），也就是实现某个 morpheme 的<b>语音或书写片段（phonetic / orthographic segments）</b>。</p>",
+    "<div class='note-line'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='#bd852b' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='16' x2='12' y2='12'/><line x1='12' y1='8' x2='12.01' y2='8'/></svg><span>EN: morpheme is to morph as <b>phoneme is to phone</b> &mdash; an abstract unit versus its concrete realization.<br>中文：morpheme 之于 morph，正如 <b>phoneme 之于 phone</b>&mdash;&mdash;抽象单位 对 它的具体实现。</span></div>",
+    "<p class='en'><span class='ltag en'>EN</span>Most morphemes are realized by a single morph, e.g. <i>bird, tree, green, sad, want</i>; word and morpheme then coincide, giving <b>mono-morphemic words</b>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>多数 morpheme 只由一个 morph 实现，如 <i>bird, tree, green, sad, want</i>；这类词与词素重合，叫<b>单语素词（mono-morphemic words）</b>。</p>",
+    "<div class='wordbox'>EN: the plural morpheme {-s} has three morphs in different phonetic environments:<br>中文：复数语素 {-s} 在不同语音环境中有三个 morph：<br>tweet<span class='seg'>s</span> &rarr; /s/　(after the voiceless sound /t/)<br>emoji<span class='seg'>s</span> &rarr; /z/　(after a vowel)<br>messag<span class='seg'>es</span> &rarr; /ɪz/　(after the sibilant /dʒ/)</div>",
+    "<p class='en'><span class='ltag en'>EN</span>An <b>Allomorph</b> is a member of a set of morphs that represent one morpheme. Just as phones can be grouped as allophones of a phoneme, morphs can be grouped as allomorphs of a morpheme.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Allomorph（词素变体）</b>：代表<b>同一个</b> morpheme 的一组 morph 中的每个成员（a member of a set of morphs that represent one morpheme）。正如 phones 可归为一个 phoneme 的 allophones，morphs 也可归为一个 morpheme 的 allomorphs。</p>",
+    "<div class='wordbox'>EN: allomorphs of the morpheme {of} &mdash; strong form /ɒv/ (US /ʌv/); weak forms /əv/, /v/ (a cup o&rsquo; tea; lots of). Note that /ɒf/ is the word <b>off</b>, not a form of <i>of</i>.<br>中文：语素 {of} 的 allomorphs：强式 /ɒv/（美音 /ʌv/），弱式 /əv/、/v/；注意 /ɒf/ 是 <b>off</b>（离开、关掉），属于另一个词，不是 of 的变体。</div>",
+    "<p class='en'><span class='ltag en'>EN</span>Thus /s/, /z/ and /ɪz/ are allomorphs of the same plural morpheme; <i>was</i> and <i>were</i> are different morphs realizing the past tense of the morpheme {be}.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>因此 /s/、/z/、/ɪz/ 是同一复数语素的 allomorphs；was、were 则是语素 {be} 过去时的不同 morph。</p>"
+  ],
+  questions:[
+    {t:"mcq", q:"The phonetic or orthographic strings (segments) that realize a morpheme are termed ____.",
+     opts:["phones","morphs","phonemes","syllables"], a:1,
+     ex:"这些实现 morpheme 的语音或书写片段叫 morph（形素）。"},
+    {t:"mcq", q:"The relationship &lsquo;morpheme : morph&rsquo; is parallel to which of the following?",
+     opts:["phone : phoneme","phoneme : phone","allophone : phone","letter : sound"], a:1,
+     ex:"morpheme（抽象）: morph（具体实现）= phoneme : phone。"},
+    {t:"match", q:"Match each word with the morph that realizes its plural morpheme.",
+     left:["tweets","emojis","messages"], right:["/s/","/z/","/ɪz/"], a:[0,1,2],
+     ex:"tweet 以清辅音 /t/ 结尾 → /s/；emoji 以元音结尾 → /z/；message 以 sibilant（咝音）/dʒ/ 结尾 → 加 /ɪz/。"},
+    {t:"tf", q:"In tweets, emojis and messages, the endings /s/, /z/ and /ɪz/ are allomorphs of the same plural morpheme.",
+     a:true, ex:"它们都表示复数、语法功能相同，是同一语素的 allomorphs。"},
+    {t:"mcq", q:"Which of the following is NOT a morph that realizes the morpheme {of}?",
+     opts:["/ɒv/","/əv/","/v/","/ɒf/"], a:3,
+     ex:"/ɒf/ 是 off（离开、关掉），属于另一个词；of 的强式 /ɒv/、弱式 /əv/、/v/（a cup o&rsquo; tea）才是它的 allomorphs。"},
+    {t:"fill", q:"An ____ is a member of a set of morphs that represent one morpheme.",
+     a:["allomorph"], ex:"allomorph（词素变体）：同一语素的一组 morph 中的成员。"}
+  ]
+},
+{
+  code:"3.3.1", zh:"自由词素与粘着词素", title:"Free and Bound Morphemes",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Free morpheme</b> does not depend on other morphemes: it has a complete meaning of its own, can function as a free grammatical unit in a sentence, and is <b>equivalent to a word</b>, e.g. <i>man, earth, wind, car, anger</i>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Free morpheme（自由词素）</b>：不依赖其他词素，本身就有完整意义，能在句中作为自由语法单位使用，<b>等同于一个词</b>。如 <i>man, earth, wind, car, anger</i>。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Bound morpheme</b> cannot stand alone as a word; it must be bound to other morphemes to form words or perform a grammatical function, and it appears extensively in derived words.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Bound morpheme（粘着词素）</b>：不能单独成词，必须附着（bound）在其他词素上才能构词或履行语法功能，大量出现在派生词中。</p>",
+    "<div class='wordbox'>recollection = re- + collect + -ion<br>idealistic = ideal + -ist + -ic<br>ex-prisoner = ex- + prison + -er<br>collect / ideal / prison stand alone &rarr; free（可独立 &rarr; free）<br>re-, -ion, -ist, -ic, ex-, -er cannot stand alone &rarr; bound（不能独立 &rarr; bound）</div>",
+    "<p class='en'><span class='ltag en'>EN</span>A single word may combine morphemes in three different ways:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>一个单词可以按三种方式组合词素：</p>",
+    "<div class='wordbox'>free + free（自由 + 自由）：<b>blackbird</b> = black + bird &mdash; both can stand alone<br>bound + free（粘着 + 自由）：<b>recollect</b> = re- + collect &mdash; re- is bound, collect is free<br>bound + bound（粘着 + 粘着）：<b>receive</b> = re- + -ceive &mdash; neither can stand alone; -ceive is a bound root</div>",
+    "<p class='en'><span class='ltag en'>EN</span>Free morphemes are all roots; bound morphemes fall into two types: <b>bound roots</b> and <b>affixes</b>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>自由词素都是词根（roots）；粘着词素则包括<b>粘着词根（bound root）</b>和<b>词缀（affix）</b>两类。</p>",
+    "<div class='wordbox'>antecedent = ante- + -ced- + -ent<br>-ced- is a bound root meaning &lsquo;approach, go to&rsquo;（粘着词根，意为 approach, go to）<br>ante- = the prefix &lsquo;before&rsquo;；-ent = noun suffix &lsquo;a person / a thing&rsquo;<br>The whole word consists of bound morphemes only, meaning &lsquo;something that goes before&rsquo;（整个词只由粘着词素构成，意为&lsquo;先行的事物&rsquo;）</div>"
+  ],
+  questions:[
+    {t:"cls", q:"Classify each item as a free or a bound morpheme.",
+     groups:["Free","Bound"],
+     items:[{w:"man",g:0},{w:"re-",g:1},{w:"collect",g:0},{w:"-ist",g:1},{w:"prison",g:0},{w:"ex-",g:1},{w:"dis (to disrespect sb)",g:0},{w:"ex (one&rsquo;s former partner)",g:0},{w:"ish (somewhat)",g:0},{w:"-ceive",g:1}],
+     ex:"man / collect / prison 能独立成词 → free；re-、-ist、ex-、-ceive 必须附着他词 → bound（-ceive 是粘着词根）。注意 dis、ex、ish 现在都能单独使用：to dis sb（对某人不敬，Don&rsquo;t dis me!）、my ex（前任）、&lsquo;Ish.&rsquo;（有点吧），已成为 free morphemes；可对比 ex-（前缀，bound）与 ex（名词，free）。"},
+    {t:"mcq", q:"In <i>antecedent</i> (ante- + -ced- + -ent), the form <i>-ced-</i> is a ____.",
+     opts:["free root","bound root","free morpheme","inflectional suffix"], a:1,
+     ex:"-ced- 不能独立、却承载核心意义（approach, go to），是 bound root（粘着词根）。"},
+    {t:"tf", q:"Free morphemes are all roots, which can be used as words or as word-building elements to form new words.",
+     a:true, ex:"自由词素都是词根，既可独立成词，也可作构词材料。"},
+    {t:"mcq", q:"Which of the following words is made up of ONLY bound morphemes?",
+     opts:["blackbird","recollect","magnanimous","childhood"], a:2,
+     ex:"blackbird = black + bird（free+free）；recollect 含 free 的 collect；childhood 含 free 的 child。只有 magnanimous /mæɡˈnænɪməs/ = magn-（great，粘着词根）+ -anim-（mind，粘着词根，参 animal、unanimous）+ -ous（形容词后缀），三部分全是 bound。"},
+    {t:"fill", q:"Bound morphemes include two types: bound ____ and affixes.",
+     a:["roots"], ex:"bound root（粘着词根）和 affix（词缀）两类。"}
+  ]
+},
+{
+  code:"3.3.2", zh:"派生词素与屈折词素", title:"Derivational and Inflectional Morphemes",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Derivational morpheme</b> derives new words: combined with other morphemes it <b>produces a new word</b>. English derived and compound words rely on it, e.g. <i>a+mor+al</i>, <i>clear+ance</i>, <i>life+like</i>, <i>homo+gen+eous</i>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Derivational morpheme（派生词素）</b>：用来派生新词&mdash;&mdash;与别的词素结合后<b>产生新词</b>。英语的派生词、复合词都靠它，如 <i>a+mor+al</i>、<i>clear+ance</i>、<i>life+like</i>、<i>homo+gen+eous</i>。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>An <b>Inflectional morpheme</b> expresses syntactic relations between words and serves as a <b>grammatical marker</b>; it is <b>restricted to suffixes</b>. The main ones in English are:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Inflectional morpheme（屈折词素）</b>：表示词与词之间的句法关系，充当<b>语法标记</b>，且<b>仅限于后缀</b>。英语中主要有：</p>",
+    "<ul><li><span class='li-en'>Noun plural -s (-es): machines, desks, potatoes / 名词复数 -s (-es)</span></li><li><span class='li-en'>Third-person singular verb -s: likes, works, goes / 动词第三人称单数 -s</span></li><li><span class='li-en'>Noun possessive -&rsquo;s: the man&rsquo;s role / 名词所有格 -&rsquo;s</span></li><li><span class='li-en'>Comparative -er / superlative -est of adjectives and adverbs: happier&ndash;happiest / 形容词、副词比较级 -er、最高级 -est</span></li><li><span class='li-en'>Verb past tense -ed; progressive -ing / 动词过去时 -ed；进行时 -ing</span></li></ul>",
+    "<table class='ref'><tr><th>Inflectional 屈折</th><th>Derivational 派生</th></tr>"+
+    "<tr><td>Does not change meaning or part of speech of the stem（不改变词干意义或词性）</td><td>Changes meaning or part of speech of the stem（改变意义或词性）</td></tr>"+
+    "<tr><td>Indicates syntactic relations between different words in a sentence（表示句中词与词的句法关系）</td><td>Indicates semantic relations within the word（表示词内部的语义关系）</td></tr>"+
+    "<tr><td>Occurs with all members of some large class（与某一大类的所有成员搭配）</td><td>Occurs with only some members of a class（只与一类中部分成员搭配）</td></tr>"+
+    "<tr><td>Occurs at margins (outermost) of words（位于词的最外层）</td><td>Occurs before any inflectional suffixes are added（位于屈折后缀之前、更靠近词根）</td></tr></table>"
+  ],
+  questions:[
+    {t:"cls", q:"Classify each suffix as derivational or inflectional.",
+     groups:["Derivational","Inflectional"],
+     items:[{w:"-s in books",g:1},{w:"-er in teacher",g:0},{w:"-ing in playing",g:1},{w:"-ness in kindness",g:0},{w:"-ed in walked",g:1},{w:"-ism in socialism",g:0},{w:"-er in faster",g:1}],
+     ex:"构成新词 / 改变词性的（teacher 的 -er、-ness、-ism）是派生；只表语法关系的（复数 -s、进行 -ing、过去 -ed、比较级 -er）是屈折。"},
+    {t:"mcq", q:"Which statement is TRUE of inflectional morphemes?",
+     opts:["They change the part of speech of the stem.","They do not change the meaning or part of speech of the stem.","They create brand-new words.","They occur before derivational suffixes."], a:1,
+     ex:"屈折词素不改变词干的意义或词性，只给同一个词加上语法标记（如 book→books）。"},
+    {t:"tf", q:"Inflectional morphemes occur at the margins, i.e. the outermost layer, of a word.",
+     a:true, ex:"屈折后缀位于词的最外层；派生词素更靠近词根，在屈折后缀之前。"},
+    {t:"multi", q:"Which of the following are inflectional suffixes? (Select all that apply.)",
+     opts:["-ed","-ing","-est","-ic"], a:[0,1,2],
+     ex:"-ed（过去时）、-ing（进行时）、-est（最高级）是屈折后缀；-ic 是派生后缀（如 history→historic）。"},
+    {t:"mcq", q:"In <i>internationalists</i>, which affix is the inflectional one sitting at the outermost margin?",
+     opts:["inter-","-al","-ist","-s"], a:3,
+     ex:"-s 是复数屈折后缀，位于词的最外层；inter-、-al、-ist 都是派生词素。"}
+  ]
+}
+,
+{
+  code:"3.3.3", zh:"实义词素与语法词素", title:"Content and Grammatical Morphemes",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>On the basis of meaning and syntax, morphemes can also be divided into content and grammatical morphemes (Traugott &amp; Pratt 1980; Bolinger &amp; Sears 1981; Hatch &amp; Brown 1995).</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>在语义和句法的基础上，词素还可分为 content 与 grammatical 两类（Traugott &amp; Pratt 1980；Bolinger &amp; Sears 1981；Hatch &amp; Brown 1995）。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Content morpheme</b> (also called lexical morpheme) carries real lexical content. It corresponds to the derivational morpheme discussed above &mdash; <b>whether it is free or bound</b>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Content morpheme（实义词素）</b>：即 lexical morpheme（词汇词素），带有实实在在的词汇内容（lexical content），也就是前面说的 derivational morpheme&mdash;&mdash;<b>无论它是 free 还是 bound</b>。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>A <b>Grammatical morpheme</b> mainly serves as a grammatical marker and includes two parts:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Grammatical morpheme（语法词素）</b>：主要充当语法标记，包括两部分：</p>",
+    "<ul><li><span class='li-en'>Inflectional affixes: -s, -ed, -ing, -er, -est, etc. / 屈折词缀 inflectional affixes</span></li><li><span class='li-en'>Free-morpheme <b>function words</b>: in, and, do, have, they, while, where, but, that, etc. / 本身是自由词素的功能词（functional words）</span></li></ul>",
+    "<div class='note-line'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='#bd852b' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='16' x2='12' y2='12'/><line x1='12' y1='8' x2='12.01' y2='8'/></svg><span>EN: function words such as in, and, do and they are formally free morphemes but function semantically as grammatical morphemes.<br>中文：in、and、do、they 这类功能词，形式上是 free morpheme，但在语义功能上属于 grammatical morpheme。</span></div>",
+    "<table class='ref'><tr><th></th><th>Free forms 自由形式</th><th>Bound forms 粘着形式</th></tr>"+
+    "<tr><th>Content &asymp; derivational<br>实义 &asymp; 派生</th><td>lexical words 词汇词：cat, run, beauty</td><td>derivational affixes 派生词缀：-ness, -ize, -ity</td></tr>"+
+    "<tr><th>Grammatical<br>语法</th><td>function words 功能词：and, the, they</td><td>inflectional affixes 屈折词缀：-ed, -ing, -s</td></tr></table>"
+  ],
+  questions:[
+    {t:"cls", q:"Classify each item as a content or a grammatical morpheme.",
+     groups:["Content","Grammatical"],
+     items:[{w:"cat",g:0},{w:"and",g:1},{w:"-ness in kindness",g:0},{w:"-ed in walked",g:1},{w:"run",g:0},{w:"the",g:1},{w:"-ize in modernize",g:0},{w:"-ing in playing",g:1},{w:"beauty",g:0},{w:"they",g:1},{w:"-s in books",g:1},{w:"-ity in equality",g:0}],
+     ex:"cat / run / beauty 带词汇内容 → content；-ness、-ize、-ity 是派生（derivational）词素，也带词汇内容，同样是 content；and / the / they 是功能词，-ed / -ing / -s 是屈折（inflectional）词缀，只表语法关系 → grammatical。"},
+    {t:"mcq", q:"Which of the following is a grammatical morpheme?",
+     opts:["happy","write","while","tree"], a:2,
+     ex:"while 是表示语法 / 连接关系的功能词；happy、write、tree 都带具体词汇意义。"},
+    {t:"mcq", q:"Which of the following bound morphemes is a CONTENT morpheme?",
+     opts:["-ed in talked","-ing in singing","-ify in simplify","-est in longest"], a:2,
+     ex:"-ify 是派生词素（simplify 由 simple 派生而来），带词汇内容 → content；-ed、-ing、-est 都是屈折词缀，充当语法标记 → grammatical。"},
+    {t:"tf", q:"Function words such as in, and, do and they are free morphemes that function as grammatical markers.",
+     a:true, ex:"它们是自由形式，却承担语法标记功能，属于 free grammatical morphemes。"},
+    {t:"mcq", q:"Content morphemes are also called ____ morphemes.",
+     opts:["lexical","functional","inflectional","empty"], a:0,
+     ex:"content = lexical（词汇）词素，带有 lexical content。"},
+    {t:"fill", q:"Grammatical morphemes encompass both inflectional affixes and free morphemes traditionally called ____ words.",
+     a:["functional"], ex:"这些自由的语法词素传统上叫 functional words（功能词）。"}
+  ]
+},
+{
+  code:"3.4", zh:"识别词素", title:"Identifying Morphemes",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>Morphemes are the smallest, distinguishable units and should be identifiable through <b>form, meaning and distribution</b>. By the number of morphemes a word contains:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>词素是最小的、可区别的单位，应能通过<b>形式（form）、意义（meaning）、分布（distribution）</b>来识别。按一个词包含的词素数量：</p>",
+    "<ul><li><span class='li-en'>Mono-morphemic: land, sky / 单词素：land, sky</span></li><li><span class='li-en'>Double-morphemic: chill + y, mis + take / 双词素：chill + y, mis + take</span></li><li><span class='li-en'>Triple-morphemic: anti + govern + ment / 三词素：anti + govern + ment</span></li><li><span class='li-en'>Four-morphemic: un + friend + li + ness / 四词素：un + friend + li + ness</span></li><li><span class='li-en'>Over-four-morphemic: inter + nation + al + iz(e) + ation / 超四词素：inter + nation + al + iz(e) + ation</span></li></ul>",
+    "<p class='en'><span class='ltag en'>EN</span>Form and meaning, however, often do not correspond one-to-one, so special care is needed:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>但形式和意义常常并不一一对应，需要特别小心：</p>",
+    "<ul><li><span class='li-en'><b>Same form, different meaning</b>: -er in teacher = one who; -er in clearer = comparative; -er in eraser = an object &mdash; same form, different meanings, hence <b>three different morphemes</b> / 同形不同义：teacher 的 -er = one who；clearer 的 -er = 比较级；eraser 的 -er = an object，是三个不同的词素。</span></li><li><span class='li-en'><b>Meaningless in isolation</b>: cran-, huckle-, boysen- in cranberry, huckleberry and boysenberry are meaningful only together with berry / 孤立时无意义：cran-、huckle-、boysen- 只有和 berry 连在一起才有意义。</span></li><li><span class='li-en'>Similarly, -ceive (conceive, perceive, receive) is hard to define in isolation / 类似的还有 -ceive（conceive, perceive, receive），意义难以单独界定。</span></li><li><span class='li-en'><b>Sound symbols are not morphemes</b>: fl- (flash, flame, flicker &mdash; moving light) and gl- (glow, glisten, glitter &mdash; static light) are merely sound symbols / 音象征不是词素：fl- 表 moving light、gl- 表 static light，只是 sound symbols，不是 morphemes。</span></li></ul>",
+    "<div class='note-line'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='#bd852b' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='16' x2='12' y2='12'/><line x1='12' y1='8' x2='12.01' y2='8'/></svg><span>EN: identifying inflectional morphemes is trickier &mdash; the plurals men, sheep, feet and the past tenses knew, taught, cut have no regular -s or -ed to segment and must be judged by other means.<br>中文：屈折词素的识别更麻烦：men、sheep、feet 的复数，knew、taught、cut 的过去时，并没有规则的 -s / -ed 可切分，需借助其他方式判断。</span></div>"
+  ],
+  questions:[
+    {t:"mcq", q:"In <i>cranberry</i>, the part <i>cran-</i> is ____.",
+     opts:["a free morpheme","a bound form that is meaningful only together with berry","an inflectional suffix","a prefix meaning red"], a:1,
+     ex:"cran- 孤立时无意义，只有与 berry 结合才成立，是一种特殊的粘着形式。"},
+    {t:"tf", q:"The sound cluster <i>fl-</i> in flash, flame and flicker (suggesting moving light) qualifies as a morpheme.",
+     a:false, ex:"fl- 只是音象征（sound symbol），不能独立构词、意义不稳定，不算 morpheme。"},
+    {t:"mcq", q:"The <i>-er</i> in teacher, clearer and eraser should be treated as ____.",
+     opts:["one single morpheme","three different morphemes","allomorphs of one morpheme","prefixes"], a:1,
+     ex:"三者同形但意义不同（one who / 比较级 / an object），应看作三个不同的词素。"},
+    {t:"mcq", q:"How many morphemes are there in <i>unfriendliness</i>?",
+     opts:["3","4","5","6"], a:1,
+     ex:"un- + friend + -li- + -ness，共 4 个（对应 Four-morphemic）。"},
+    {t:"mcq", q:"Which of the following is NOT a morpheme but a sound symbol?",
+     opts:["-ceive","gl- in glow","-ing","cran-"], a:1,
+     ex:"gl- 只提示 static light 的音象征；-ceive、cran- 虽特殊但仍属词素，-ing 是屈折词素。"},
+    {t:"fill", q:"Morphemes should be identifiable by their form, meaning and ____.",
+     a:["distribution"], ex:"识别词素的三个依据：form（形式）、meaning（意义）、distribution（分布）。"}
+  ]
+},
+{
+  code:"3.5", zh:"词素化与新词素", title:"Morphemization and New Morphemes",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span><b>Morphemization</b> is the process of creating a morpheme using a word, or part of a word.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Morphemization（词素化）</b>：用一个词、或词的一部分来创造新词素的过程（the process of creating a morpheme using a word, or part of a word）。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>The stock of morphemes is relatively stable; but with globalization and developments in the economy, culture and technology, new things and concepts keep emerging. Driven by the <b>Economy Principle</b> &mdash; expressing the most with the fewest forms &mdash; people consciously or unconsciously create new morphemes.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>词素数量本相对稳定；但随着全球化、经济文化与科技发展，新事物、新概念不断出现。人们在<b>经济原则（Economy Principle）</b>&mdash;&mdash;用最少的形式表达最多的内容&mdash;&mdash;驱动下，有意无意地创造新词素。</p>",
+    "<div class='wordbox'>EN: emerging morphemes and example words<br>新兴词素与例词：<br>e- (electronic): e-book, e-dictionary, e-campus, e-service<br>info- (information): infowar, infocenter, info-highway<br>docu- (document): docudrama, docufiction, docu-express</div>",
+    "<p class='en'><span class='ltag en'>EN</span>New morphemes arise mainly in two ways:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>新词素主要通过两种方式产生：</b></p>",
+    "<p class='en'><b>&#9312; Clipping</b></p>",
+    "<p class='zh'><b>① 截短（clipping）</b></p>",
+    "<ul><li><span class='li-en'>Front clipping &rarr; new prefixes: e- (electronic), info- (information), docu- (document) / 前截短（front clipping）→ 新前缀。</span></li><li><span class='li-en'>Back clipping &rarr; new suffixes: -net (Internet, &lsquo;network&rsquo;), -gate (Watergate, &lsquo;scandal&rsquo;). E.g. infonet; nannygate, antennagate, bloodgate / 后截短（back clipping）→ 新后缀：-net（&lsquo;网络&rsquo;）、-gate（&lsquo;丑闻&rsquo;），例 infonet、nannygate、antennagate、bloodgate。</span></li></ul>",
+    "<p class='en'><b>&#9313; Using an old form as a morpheme</b></p>",
+    "<p class='zh'><b>② 把旧词当作词素（using an old form as a morpheme）</b></p>",
+    "<ul><li><span class='li-en'>-in: originally a preposition/adverb, now means protest, demonstration: sit-in, teach-in, love-in, web-in / -in 本是介词 / 副词，现表示 protest, demonstration（抗议、集会）。</span></li><li><span class='li-en'>-speak: originally a high-frequency verb, now a suffix meaning terminology/style: computer-speak, newspeak, official speak / -speak 本是高频动词，现作后缀表示 terminology / style（术语、腔调）。</span></li></ul>",
+    "<div class='note-line'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='#bd852b' stroke-width='2'><path d='M12 2 2 7l10 5 10-5-10-5z'/><path d='M2 17l10 5 10-5'/><path d='M2 12l10 5 10-5'/></svg><span>EN: classroom extras &mdash; <b>bro-</b> (new prefix clipped from brother: bromance, brogrammer); <b>dis-</b> (traditional negative/reversative prefix: dislike, disappear, disagree); <b>-ism</b> (traditional noun suffix for doctrines, theories or behavior: capitalism, racism, tourism).<br>课堂补充：<b>bro-</b>（由 brother 截短的新兴前缀，如 bromance、brogrammer）；<b>dis-</b>（传统否定 / 逆转前缀，如 dislike, disappear, disagree）；<b>-ism</b>（传统名词后缀，表主义、学说、行为，如 capitalism, racism, tourism）。</span></div>"
+  ],
+  questions:[
+    {t:"match", q:"Match each new morpheme with the word it was clipped from.",
+     left:["e-","info-","docu-","-gate","-net"], right:["electronic","information","document","Watergate","Internet"], a:[0,1,2,3,4],
+     ex:"e-/info-/docu- 为前截短；-gate 来自 Watergate、-net 来自 Internet，为后截短。"},
+    {t:"mcq", q:"The suffix <i>-gate</i> (as in nannygate, antennagate, bloodgate) conveys the meaning of ____.",
+     opts:["a door","a scandal","the Internet","a building"], a:1,
+     ex:"-gate 由 Watergate（水门事件）而来，泛指各类&lsquo;丑闻、风波&rsquo;。"},
+    {t:"mcq", q:"In sit-in, teach-in and love-in, the element <i>-in</i> means ____.",
+     opts:["inside","protest or demonstration","an entrance","content"], a:1,
+     ex:"-in 由旧介词虚化而来，表示&lsquo;抗议、集会、示威&rsquo;。"},
+    {t:"cls", q:"Classify these morphemes as a prefix or a suffix.",
+     groups:["Prefix","Suffix"],
+     items:[{w:"bro-",g:0},{w:"-gate",g:1},{w:"-ism",g:1},{w:"dis-",g:0},{w:"-net",g:1},{w:"e-",g:0}],
+     ex:"bro-、dis-、e- 出现在词首 → prefix；-gate、-ism、-net 出现在词尾 → suffix。"},
+    {t:"tf", q:"Morphemization is the process of creating a morpheme using a word, or part of a word.",
+     a:true, ex:"这正是 morphemization 的定义。"},
+    {t:"fill", q:"New morphemes are created underlying the ____ Principle of language use — minimum forms for maximum expression.",
+     a:["economy"], ex:"Economy Principle（经济原则）：用最少的形式表达最多的内容。"},
+    {t:"mcq", q:"The element <i>-speak</i> in newspeak and computer-speak is used to mean ____.",
+     opts:["the verb to speak","terminology or style of a group","a loud voice","correct grammar"], a:1,
+     ex:"-speak 已虚化为后缀，表示某群体的&lsquo;术语、说话腔调&rsquo;。"}
+  ]
+},
+{
+  code:"3.6", zh:"词根、词干、词基与词缀", title:"Root, Stem, Base & Affix",
+  intro:[
+    "<p class='en'><span class='ltag en'>EN</span>Words can be analyzed into morphemes; in word formation these morphemes are conventionally called <b>root, stem, base and affix</b>.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span>词可以分析为词素；而在构词中，词素通常被分别称为 <b>root（词根）、stem（词干）、base（词基）、affix（词缀）</b>。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>An <b>Affix</b> is bound to a word or morpheme to change or modify its meaning and function; affixes are all bound morphemes. By function they divide into inflectional affixes (-s, -ed, -ing) and derivational affixes (pre-, ex-, de-, -less, -dom, -ic); by position:</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Affix（词缀）</b>：附着在词或词素上以改变、修饰其意义和功能，全部是 bound morphemes。按功能分 inflectional affixes（-s, -ed, -ing）与 derivational affixes（pre-, ex-, de-, -less, -dom, -ic）；按位置分：</p>",
+    "<ul><li><span class='li-en'><b>Prefix</b>: all derivational, used to form new words, e.g. pre-, ex-, de- / <b>Prefix（前缀）</b>：全部是 derivational（派生），用来构成新词，如 pre-、ex-、de-。</span></li><li><span class='li-en'><b>Suffix</b>: includes both derivational suffixes (-less, -dom, -ic) and inflectional suffixes (-s, -ed, -ing) / <b>Suffix（后缀）</b>：既含 derivational suffixes（-less, -dom, -ic），也含 inflectional suffixes（-s, -ed, -ing）。</span></li></ul>",
+    "<p class='en'><span class='ltag en'>EN</span>The <b>Root</b> is &ldquo;the basic form of a word which cannot be further analysed without total loss of identity&rdquo; (Crystal 1985); it carries the main meaning and may be free or bound. In <i>internationalists</i>, removing inter-, -al, -ist and -s leaves <i>nation</i>, the root.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Root（词根）</b>：the basic form of a word which cannot be further analysed without total loss of identity（Crystal 1985）&mdash;&mdash;词的基础形式，再切分就会彻底丧失身份；承载主要意义，可 free 可 bound。internationalists 去掉 inter-、-al、-ist、-s，剩下的 nation 即 root。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>The <b>Stem</b> is &ldquo;that part of the word-form which remains when all inflectional affixes have been removed&rdquo; (Bauer); any form to which inflectional affixes can be added is a stem.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Stem（词干）</b>：that part of the word-form which remains when all inflectional affixes have been removed（Bauer）&mdash;&mdash;去掉所有屈折词缀后剩下的部分；任何能加屈折词缀的形式都是 stem。</p>",
+    "<p class='en'><span class='ltag en'>EN</span>The <b>Base</b> is, in this book, a cover term for any form to which affixes of either kind (derivational or inflectional) can be added; it can be a root or a stem.</p>",
+    "<p class='zh'><span class='ltag zh'>中</span><b>Base（词基）</b>：本书中作为通用术语，指任何种类词缀（派生、屈折）都能往上加的形式，可以是 root 也可以是 stem。</p>",
+    "<div class='wordbox'>EN: layers within internationalists<br>internationalists 的层级：<br>nation (root, stem, base)<br>national (stem, base)<br>international (stem, base)<br>internationalist (stem, base)<br>internationalists (then add inflectional -s)</div>",
+    "<div class='note-line'><svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='#bd852b' stroke-width='2'><circle cx='12' cy='12' r='10'/><line x1='12' y1='16' x2='12' y2='12'/><line x1='12' y1='8' x2='12.01' y2='8'/></svg><span>EN: tracing impracticality back: impractical &rarr; practical &rarr; practice; the final <i>practice</i> is the root (also stem and base), while impractical and practical are only bases.<br>impracticality 一路还原：impractical → practical → practice；最后的 practice 才是 root（同时是 stem、base），中间的 impractical、practical 只是 base。</span></div>"
+  ],
+  questions:[
+    {t:"mcq", q:"In <i>internationalists</i>, the form <i>nation</i> is ____.",
+     opts:["only a root","a root, a stem and a base","only a base","only a stem"], a:1,
+     ex:"nation 不能再切分（root），又能加屈折 -s（stem），也能加各类词缀（base）。"},
+    {t:"mcq", q:"A stem is &ldquo;that part of a word-form which remains when all ____ affixes have been removed&rdquo; (Bauer).",
+     opts:["derivational","inflectional","prefix","lexical"], a:1,
+     ex:"stem 是去掉屈折（inflectional）词缀后剩下的部分。"},
+    {t:"tf", q:"In English, prefixes are all derivational, whereas suffixes include both derivational and inflectional ones.",
+     a:true, ex:"前缀都用来构词（派生）；后缀既有派生（-ic、-less）也有屈折（-s、-ed、-ing）。"},
+    {t:"mcq", q:"The root of a word is the basic form that ____.",
+     opts:["can always take -ing","cannot be further analysed without total loss of identity","is always bound","functions as a connective"], a:1,
+     ex:"root 再切分就会彻底丧失词的身份与核心意义。"},
+    {t:"mcq", q:"In the chain impracticality → impractical → practical → practice, the ultimate word <i>practice</i> functions as ____.",
+     opts:["a root, a stem and a base","only a base","only a stem","only a root"], a:0,
+     ex:"practice 不可再分（root），又能加屈折与各类派生词缀，故同时是 stem、base。"}
+  ]
+}
+/* SECTIONS_PART2 */
+];
+
+/* ============================================================
+   工具函数
+   ============================================================ */
+function h(tag, cls, html){ const e=document.createElement(tag); if(cls) e.className=cls; if(html!=null) e.innerHTML=html; return e; }
+function stripHtml(s){ const d=document.createElement("div"); d.innerHTML=s; return (d.textContent||d.innerText||"").replace(/\s+/g," ").trim(); }
+function normFill(s){ return (s||"").trim().toLowerCase().replace(/[.,;:'"!?。，；：、！？’‘“”]/g,"").replace(/\s+/g," "); }
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+function seededShuffle(arr, seed){
+  const a=arr.slice(); let s=seed;
+  for(let i=a.length-1;i>0;i--){ s=(s*9301+49297)%233280; const j=Math.floor((s/233280)*(i+1)); const t=a[i]; a[i]=a[j]; a[j]=t; }
+  return a;
+}
+function seedFromStr(str){ let v=11; for(const c of str) v=(v*31+c.charCodeAt(0))%100000; return v+7; }
+let toastTimer=null;
+function toast(msg){
+  const t=document.getElementById("toast"); t.textContent=msg; t.classList.add("show");
+  clearTimeout(toastTimer); toastTimer=setTimeout(()=>t.classList.remove("show"),2600);
+}
+const ICON_OK="<svg width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'><polyline points='20 6 9 17 4 12'/></svg>";
+const ICON_NO="<svg width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3'><line x1='18' y1='6' x2='6' y2='18'/><line x1='6' y1='6' x2='18' y2='18'/></svg>";
+
+/* 扁平化题目，建立全局编号 */
+const FLAT=[];
+SECTIONS.forEach((sec,si)=>sec.questions.forEach((qd,qi)=>FLAT.push({si,qi,qid:si+"-"+qi,qd,sec})));
+const TOTAL=FLAT.length;
+const TYPE_LABEL={mcq:"单选",multi:"多选",tf:"判断",fill:"填空",match:"匹配",cls:"分类"};
+const state={ans:{}};
+
+/* ============================================================
+   渲染：小节导航
+   ============================================================ */
+const secnav=document.getElementById("secnav");
+SECTIONS.forEach((sec,si)=>{
+  const a=h("a",null,esc(sec.code)+" "+esc(sec.title));
+  a.href="#sec-"+si; a.id="nav-"+si; secnav.appendChild(a);
+});
+
+/* ============================================================
+   渲染：各小节
+   ============================================================ */
+const sectionsEl=document.getElementById("sections");
+SECTIONS.forEach((sec,si)=>{
+  const secEl=h("section","lesson-sec"); secEl.id="sec-"+si;
+  secEl.appendChild(h("div","sec-head",
+    "<div class='sec-code'>"+esc(sec.code)+"</div>"+
+    "<h2>"+esc(sec.title)+" <span class='zh'>"+esc(sec.zh)+"</span></h2>"));
+  const lesson=h("div","lesson",
+    "<span class='l-tag'><svg width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2'><path d='M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z'/><path d='M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z'/></svg>知识点讲解</span>"+
+    sec.intro.join(""));
+  secEl.appendChild(lesson);
+  secEl.appendChild(h("div","quiz-tag",
+    "<svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2'><path d='M12 20h9'/><path d='M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z'/></svg>即时练习（共 "+sec.questions.length+" 题，作答后即时反馈）"));
+  sec.questions.forEach((qd,qi)=>{
+    const qid=si+"-"+qi;
+    const q=h("div","q"); q.id="q-"+qid;
+    q.appendChild(h("div","q-head",
+      "<div class='q-num'>"+(qi+1)+"</div>"+
+      "<div class='q-stem'><span class='qtype'>"+TYPE_LABEL[qd.t]+"</span>"+qd.q+"</div>"));
+    const body=h("div","q-body"); q.appendChild(body);
+    const fb=h("div","feedback"); fb.id="fb-"+qid; q.appendChild(fb);
+    secEl.appendChild(q);
+    if(qd.t==="mcq") renderMcq(body,si,qi,qd,false);
+    else if(qd.t==="tf") renderMcq(body,si,qi,qd,true);
+    else if(qd.t==="multi") renderMulti(body,si,qi,qd);
+    else if(qd.t==="fill") renderFill(body,si,qi,qd);
+    else if(qd.t==="match") renderMatch(body,si,qi,qd);
+    else if(qd.t==="cls") renderCls(body,si,qi,qd);
+  });
+  sectionsEl.appendChild(secEl);
+});
+
+/* ---------- 单选 / 判断 ---------- */
+function renderMcq(body,si,qi,qd,isTf){
+  const qid=si+"-"+qi;
+  const opts=isTf?["True","False"]:qd.opts;
+  const correctIdx=isTf?(qd.a?0:1):qd.a;
+  const wrap=h("div","opts");
+  opts.forEach((text,idx)=>{
+    const b=h("button","opt","<span class='key'>"+(isTf?(idx===0?"T":"F"):String.fromCharCode(65+idx))+"</span><span>"+esc(text)+"</span><span class='mk'>"+ICON_OK+"</span>");
+    b.type="button";
+    b.addEventListener("click",()=>{
+      wrap.querySelectorAll(".opt").forEach(o=>o.classList.remove("selected","correct","wrong"));
+      const right=idx===correctIdx;
+      wrap.querySelectorAll(".opt")[correctIdx].classList.add("correct");
+      if(!right) b.classList.add("wrong"); else b.classList.add("correct");
+      state.ans[qid]={answered:true,score:right?1:0,
+        label:isTf?(idx===0?"True":"False"):text,
+        correctLabel:isTf?(correctIdx===0?"True":"False"):opts[correctIdx]};
+      showFeedback(qid,right,qd.ex);
+      updateProgress();
+    });
+    wrap.appendChild(b);
+  });
+  body.appendChild(wrap);
+}
+
+/* ---------- 多选 ---------- */
+function renderMulti(body,si,qi,qd){
+  const qid=si+"-"+qi;
+  const chosen=new Set();
+  const wrap=h("div","opts");
+  qd.opts.forEach((text,idx)=>{
+    const b=h("button","opt","<span class='key'>"+String.fromCharCode(65+idx)+"</span><span>"+esc(text)+"</span><span class='mk'>"+ICON_OK+"</span>");
+    b.type="button";
+    b.addEventListener("click",()=>{
+      if(chosen.has(idx)){chosen.delete(idx);b.classList.remove("selected");}
+      else{chosen.add(idx);b.classList.add("selected");}
+    });
+    wrap.appendChild(b);
+  });
+  body.appendChild(wrap);
+  const submit=h("button","btn btn-pine","提交答案"); submit.type="button";
+  submit.style.marginTop="11px";
+  submit.addEventListener("click",()=>{
+    if(chosen.size===0){toast("请先勾选至少一个选项");return;}
+    let allRight=true;
+    wrap.querySelectorAll(".opt").forEach((b,idx)=>{
+      b.classList.remove("correct","wrong");
+      const should=qd.a.includes(idx), has=chosen.has(idx);
+      if(should) b.classList.add("correct");
+      if(has&&!should){b.classList.add("wrong");allRight=false;}
+      if(should&&!has) allRight=false;
+    });
+    const lab=idxs=>[...idxs].sort((a,b)=>a-b).map(i=>String.fromCharCode(65+i)+". "+qd.opts[i]).join("；");
+    state.ans[qid]={answered:true,score:allRight?1:0,label:lab(chosen),correctLabel:lab(qd.a)};
+    showFeedback(qid,allRight,qd.ex);
+    updateProgress();
+  });
+  body.appendChild(submit);
+}
+
+/* ---------- 填空 ---------- */
+function renderFill(body,si,qi,qd){
+  const qid=si+"-"+qi;
+  const row=h("div","fill-row");
+  const input=h("input"); input.type="text"; input.placeholder="在此输入你的答案";
+  const btn=h("button","btn btn-pine","提交"); btn.type="button";
+  function commit(){
+    if(!input.value.trim()){toast("请先填写答案");return;}
+    const given=normFill(input.value);
+    const right=qd.a.some(a=>normFill(a)===given);
+    state.ans[qid]={answered:true,score:right?1:0,label:input.value.trim(),correctLabel:qd.a[0]};
+    input.style.borderColor=right?"var(--pine)":"var(--brick)";
+    showFeedback(qid,right,qd.ex);
+    updateProgress();
+  }
+  btn.addEventListener("click",commit);
+  input.addEventListener("keydown",e=>{if(e.key==="Enter")commit();});
+  row.appendChild(input); row.appendChild(btn);
+  body.appendChild(row);
+}
+
+/* ---------- 匹配（每个左项一个下拉） ---------- */
+function renderMatch(body,si,qi,qd){
+  const qid=si+"-"+qi;
+  const order=seededShuffle(qd.right.map((_,i)=>i),seedFromStr(qid)); // 打乱后的 right 索引顺序
+  const selects=[];
+  qd.left.forEach((lText,li)=>{
+    const row=h("div","match-row");
+    row.appendChild(h("span","match-left",esc(lText)));
+    row.appendChild(h("span","match-arrow",
+      "<svg width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'><line x1='5' y1='12' x2='19' y2='12'/><polyline points='12 5 19 12 12 19'/></svg>"));
+    const sel=h("select");
+    sel.innerHTML="<option value='-1'>— 请选择 —</option>"+order.map(ri=>"<option value='"+ri+"'>"+esc(qd.right[ri])+"</option>").join("");
+    sel.dataset.li=li;
+    sel.addEventListener("change",()=>{
+      evaluate();
+    });
+    selects.push({li,sel,row});
+    row.appendChild(sel); body.appendChild(row);
+  });
+  function evaluate(){
+    let done=0,right=0;
+    selects.forEach(s=>{
+      const v=parseInt(s.sel.value,10);
+      s.row.classList.remove("ok","no");
+      if(v!==-1){done++; if(v===qd.a[s.li]){right++;s.row.classList.add("ok");}else s.row.classList.add("no");}
+    });
+    const fb=document.getElementById("fb-"+qid);
+    if(done===qd.left.length){
+      state.ans[qid]={answered:true,score:right/qd.left.length,
+        label:right+"/"+qd.left.length+" 配对正确",
+        correctLabel:qd.left.map((l,i)=>l+" → "+qd.right[qd.a[i]]).join("；")};
+      showFeedback(qid,right===qd.left.length,qd.ex,"配对结果："+right+"/"+qd.left.length+" 正确。");
+    }else{
+      delete state.ans[qid]; fb.className="feedback"; fb.innerHTML="";
+    }
+    updateProgress();
+  }
+}
+
+/* ---------- 分类 ---------- */
+function renderCls(body,si,qi,qd){
+  const qid=si+"-"+qi;
+  qd.items.forEach((item,itIdx)=>{
+    const row=h("div","cls-row");
+    row.appendChild(h("span","cls-word",esc(item.w)));
+    const btns=h("span","cls-btns");
+    qd.groups.forEach((g,gi)=>{
+      const b=h("button","cls-btn",esc(g)); b.type="button";
+      b.addEventListener("click",()=>{
+        row.querySelectorAll(".cls-btn").forEach(x=>x.classList.remove("sel-correct","sel-wrong"));
+        b.classList.add(gi===item.g?"sel-correct":"sel-wrong");
+        evaluate();
+      });
+      btns.appendChild(b);
+    });
+    row.appendChild(btns); body.appendChild(row);
+    item._row=row;
+  });
+  function evaluate(){
+    let done=0,right=0;
+    qd.items.forEach(item=>{
+      const sel=item._row.querySelector(".cls-btn.sel-correct, .cls-btn.sel-wrong");
+      if(sel){done++; const gi=qd.groups.indexOf(sel.textContent.trim()); if(gi===item.g) right++;}
+    });
+    const fb=document.getElementById("fb-"+qid);
+    if(done===qd.items.length){
+      state.ans[qid]={answered:true,score:right/qd.items.length,
+        label:right+"/"+qd.items.length+" 项正确",
+        correctLabel:qd.items.map(it=>it.w+" = "+qd.groups[it.g]).join("；")};
+      showFeedback(qid,right===qd.items.length,qd.ex,"分类结果："+right+"/"+qd.items.length+" 正确。");
+    }else{
+      delete state.ans[qid]; fb.className="feedback"; fb.innerHTML="";
+    }
+    updateProgress();
+  }
+}
+
+/* ---------- 反馈条 ---------- */
+function showFeedback(qid,right,ex,prefix){
+  const fb=document.getElementById("fb-"+qid);
+  const q=document.getElementById("q-"+qid);
+  q.classList.remove("answered-correct","answered-wrong");
+  q.classList.add(right?"answered-correct":"answered-wrong");
+  fb.className="feedback show "+(right?"good":"bad");
+  let title=right?"<span class='fb-title'>"+ICON_OK+" 回答正确</span>":"<span class='fb-title'>"+ICON_NO+" 回答不正确</span>";
+  let extra=prefix?"<div class='fb-ex'>"+esc(prefix)+"</div>":"";
+  if(ex) extra+="<div class='fb-ex'><b>解析：</b>"+ex+"</div>";
+  fb.innerHTML=title+extra;
+}
+
+/* ============================================================
+   进度 / 成绩 / 各小节掌握度
+   ============================================================ */
+function levelOf(p){
+  if(p>=90) return "Excellent · 掌握扎实";
+  if(p>=80) return "Good · 掌握良好";
+  if(p>=70) return "Satisfactory · 基本掌握";
+  if(p>=60) return "Pass · 及格";
+  return "Needs Review · 需复习";
+}
+function updateProgress(){
+  let answered=0, score=0;
+  FLAT.forEach(f=>{
+    const a=state.ans[f.qid];
+    if(a&&a.answered){answered++; score+=a.score;}
+  });
+  const pct=Math.round(score/TOTAL*100);
+  document.getElementById("progFill").style.width=(answered/TOTAL*100)+"%";
+  document.getElementById("progNum").textContent=answered+"/"+TOTAL;
+  // nav done
+  SECTIONS.forEach((sec,si)=>{
+    const all=sec.questions.every((_,qi)=>state.ans[si+"-"+qi]&&state.ans[si+"-"+qi].answered);
+    document.getElementById("nav-"+si).classList.toggle("done",all);
+  });
+  // final card
+  document.getElementById("finalScore").textContent=pct;
+  document.getElementById("finalLvl").textContent= answered===TOTAL ? levelOf(pct) : ("已完成 "+answered+"/"+TOTAL);
+  // mastery list
+  const ml=document.getElementById("masteryList"); ml.innerHTML="";
+  SECTIONS.forEach((sec,si)=>{
+    let s=0,n=sec.questions.length,d=0;
+    sec.questions.forEach((_,qi)=>{const a=state.ans[si+"-"+qi]; if(a&&a.answered){d++;s+=a.score;}});
+    const mp=n?Math.round(s/n*100):0;
+    const item=h("div","mastery-item",
+      "<div class='mi-top'><span>"+esc(sec.code)+" "+esc(sec.title)+"</span><span>"+(d===n?mp+"%":"未完成")+"</span></div>"+
+      "<div class='bar'><i style='width:"+mp+"%'></i></div>");
+    ml.appendChild(item);
+  });
+}
+
+/* ============================================================
+   学习报告 PDF
+   ============================================================ */
+function getStudent(){
+  return {
+    name:document.getElementById("sName").value.trim(),
+    sid:document.getElementById("sId").value.trim(),
+    cls:document.getElementById("sClass").value.trim(),
+    date:document.getElementById("sDate").value.trim()
+  };
+}
+function validate(){
+  const st=getStudent();
+  if(!st.name){toast("请先在上方填写姓名");document.getElementById("sName").focus();return null;}
+  let answered=0; FLAT.forEach(f=>{if(state.ans[f.qid]&&state.ans[f.qid].answered)answered++;});
+  const warn=document.getElementById("warnText");
+  if(answered<TOTAL){
+    const first=FLAT.find(f=>!state.ans[f.qid]||!state.ans[f.qid].answered);
+    warn.textContent="还有 "+(TOTAL-answered)+" 题未完成，请完成全部练习后再生成报告。";
+    warn.classList.add("show");
+    const el=document.getElementById("q-"+first.qid);
+    el.scrollIntoView({behavior:"smooth",block:"center"});
+    el.style.boxShadow="0 0 0 3px var(--ochre)";
+    setTimeout(()=>el.style.boxShadow="",1600);
+    return null;
+  }
+  const decls=[...document.querySelectorAll(".decl")];
+  if(!decls.every(d=>d.checked)){
+    warn.textContent="请先勾选下方的学习自评（3 项），确认你已理解各知识点。";
+    warn.classList.add("show");
+    document.querySelector(".declare").scrollIntoView({behavior:"smooth",block:"center"});
+    return null;
+  }
+  warn.classList.remove("show");
+  return st;
+}
+
+function buildReport(st){
+  let score=0; FLAT.forEach(f=>score+=state.ans[f.qid].score);
+  const pct=Math.round(score/TOTAL*100);
+  // 各小节掌握
+  let secRows="";
+  SECTIONS.forEach((sec,si)=>{
+    let s=0; const n=sec.questions.length;
+    sec.questions.forEach((_,qi)=>s+=state.ans[si+"-"+qi].score);
+    const mp=Math.round(s/n*100);
+    secRows+="<tr><td>"+esc(sec.code)+" "+esc(sec.title)+"</td><td class='c'>"+n+"</td><td class='c'>"+s.toFixed(n>4?0:1)+"</td><td class='c'>"+mp+"%</td><td class='c'>"+esc(levelOf(mp).split(" · ")[0])+"</td></tr>";
+  });
+  // 逐题记录
+  let ansRows="";
+  FLAT.forEach((f,gIdx)=>{
+    const a=state.ans[f.qid];
+    let res;
+    if(a.score===1) res="<span class='rp-res-ok'>✓</span>";
+    else if(a.score===0) res="<span class='rp-res-no'>✗</span>";
+    else res=esc(a.label.split(" ")[0]);
+    ansRows+="<tr><td class='qn'>"+(gIdx+1)+"</td><td class='qq'>"+esc(stripHtml(f.qd.q))+"</td><td class='ya'>"+esc(a.label)+"</td><td class='ca'>"+esc(a.correctLabel)+"</td><td class='rs'>"+res+"</td></tr>";
+  });
+  const declText=[...document.querySelectorAll(".decl")].map((d,i)=>{
+    const t=d.parentElement.querySelector("span").textContent.trim();
+    return "<li>"+(d.checked?"✓ ":"☐ ")+esc(t)+"</li>";
+  }).join("");
+  const today=st.date||new Date().toISOString().slice(0,10);
+
+  document.getElementById("report").innerHTML=
+    "<div class='rp-head'>"+
+      "<div class='rp-course'>English Lexicology · Chapter 3</div>"+
+      "<h1>Learning Report：Morphological Structure of English Words<br>学习报告 —— 英语词的形态结构</h1>"+
+      "<div class='rp-sub'>依据《英语词汇学教程（第4版）》第 3 章 · 共 "+TOTAL+" 题</div></div>"+
+    "<table class='rp-info'>"+
+      "<tr><td class='k'>姓名 Name</td><td>"+esc(st.name)+"</td><td class='k'>学号 ID</td><td>"+esc(st.sid||"—")+"</td></tr>"+
+      "<tr><td class='k'>班级 Class</td><td>"+esc(st.cls||"—")+"</td><td class='k'>日期 Date</td><td>"+esc(today)+"</td></tr>"+
+      "<tr><td class='k'>总分 Score</td><td><b>"+pct+" / 100</b></td><td class='k'>等级 Level</td><td><b>"+esc(levelOf(pct))+"</b></td></tr></table>"+
+    "<div class='rp-score-band'>"+
+      "<div class='cell'><span class='v'>"+pct+"%</span><span class='k'>总体正确率</span></div>"+
+      "<div class='cell'><span class='v'>"+TOTAL+"/"+TOTAL+"</span><span class='k'>完成题数</span></div>"+
+      "<div class='cell'><span class='v'>8</span><span class='k'>知识小节</span></div>"+
+      "<div class='cell'><span class='v'>"+esc(levelOf(pct).split(" · ")[0])+"</span><span class='k'>综合评定</span></div></div>"+
+    "<div class='pb-before'><div class='rp-h2'>一、各小节掌握情况 Section Mastery</div>"+
+      "<table class='rp-table'><tr><th>小节 Section</th><th>题数</th><th>答对</th><th>掌握度</th><th>评定</th></tr>"+secRows+"</table></div>"+
+    "<div class='pb-before'><div class='rp-h2'>二、逐题作答记录 Answer Record</div>"+
+      "<table class='rp-table rp-answers'><tr><th class='qn'>#</th><th class='qq'>题目 Question</th><th class='ya'>我的答案</th><th class='ca'>正确答案</th><th class='rs'>结果</th></tr>"+ansRows+"</table></div>"+
+    "<div class='pb-before'><div class='rp-h2'>三、学习声明 Student Declaration</div>"+
+      "<div class='rp-declare'>我已认真学习《英语词汇学教程》第 3 章，并独立完成以上全部练习，确认：<ul>"+declText+"</ul></div>"+
+      "<div class='rp-sign'><div class='line'><div class='ln'></div><div class='lab'>学生签名 Student Signature</div></div>"+
+      "<div class='line' style='flex:0 0 130px'><div class='ln'></div><div class='lab'>日期 Date</div></div></div>"+
+      "<div class='rp-teacher'><div class='t'>教师批阅 Teacher Comments / Grade</div>"+
+        "<div class='signrow'><div class='line' style='flex:1'><div class='ln' style='border:none'></div></div>"+
+        "<div class='line' style='flex:0 0 150px'><div class='ln'></div><div class='lab'>教师签名 / 成绩</div></div></div></div></div>";
+  return {pct};
+}
+
+/* ============================================================
+   打开报告预览（成绩卡两个入口共用）
+   ============================================================ */
+function openReport(){
+  const st=validate(); if(!st) return null;
+  buildReport(st);
+  const mask=document.getElementById("pdfMask");
+  mask.classList.add("show"); mask.scrollTop=0; mask.scrollLeft=0;
+  return st;
+}
+document.getElementById("genPdf").addEventListener("click",()=>{
+  if(openReport()) toast("报告已生成，请核对后下载 PDF");
+});
+document.getElementById("printPdf").addEventListener("click",()=>{
+  if(openReport()) setTimeout(()=>window.print(),300);
+});
+
+/* 预览层：关闭 / 打印 */
+document.getElementById("closeMask").addEventListener("click",()=>{
+  document.getElementById("pdfMask").classList.remove("show");
+});
+document.getElementById("printPdf2").addEventListener("click",()=>{ window.print(); });
+
+/* 预览层：html2canvas 渲染 + jsPDF 按 A4 比例切片下载 */
+async function renderAndDownload(){
+  const st=getStudent();
+  const reportEl=document.getElementById("report");
+  const spinner=document.getElementById("maskSpinner");
+  const title=document.getElementById("maskTitle");
+  const btn=document.getElementById("dlPdf"); const old=btn.innerHTML;
+  btn.disabled=true; spinner.style.display="inline-block"; title.textContent="正在渲染 PDF，请稍候…";
+  await new Promise(r=>setTimeout(r,80));
+  try{
+    const canvas=await html2canvas(reportEl,{scale:2,useCORS:true,backgroundColor:"#ffffff",logging:false});
+    const {jsPDF}=window.jspdf;
+    const doc=new jsPDF({unit:"mm",format:"a4",orientation:"portrait"});
+    const pageW=210, pageH=297;
+    const pxPageH=canvas.width*pageH/pageW;   // A4 比例对应的页高（像素）
+    let rendered=0,page=0;
+    while(rendered<canvas.height){
+      const sliceH=Math.min(pxPageH,canvas.height-rendered);
+      const c=document.createElement("canvas");
+      c.width=canvas.width; c.height=Math.ceil(sliceH);
+      const cx=c.getContext("2d");
+      cx.fillStyle="#ffffff"; cx.fillRect(0,0,c.width,c.height);
+      cx.drawImage(canvas,0,rendered,canvas.width,sliceH,0,0,canvas.width,sliceH);
+      const img=c.toDataURL("image/jpeg",0.97);
+      const hMm=sliceH*pageW/canvas.width;
+      if(page>0) doc.addPage();
+      doc.addImage(img,"JPEG",0,0,pageW,hMm);
+      rendered+=sliceH; page++;
+    }
+    doc.save("Chapter3-Learning-Report-"+st.name.replace(/\s+/g,"_")+".pdf");
+    title.textContent="学习报告预览";
+    toast("PDF 已下载，可直接发送给老师");
+  }catch(err){
+    title.textContent="学习报告预览";
+    toast("渲染失败，请改用“打印 / 另存为 PDF”");
+  }finally{
+    spinner.style.display="none"; btn.disabled=false; btn.innerHTML=old;
+  }
+}
+document.getElementById("dlPdf").addEventListener("click",renderAndDownload);
+
+/* ============================================================
+   初始化
+   ============================================================ */
+(function init(){
+  const d=new Date();
+  const local=new Date(d.getTime()-d.getTimezoneOffset()*60000);
+  document.getElementById("sDate").value=local.toISOString().slice(0,10);
+  updateProgress();
+})();
+</script>
+</body>
+</html>
